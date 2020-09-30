@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const esquema = mongoose.Schema({
     nome:{
         type: String,
+        enum: ["Cambriano", "Ordoviciano", "Siluriano", "Devoniano", "Carbonífero", "Permiano", "Triássico", "Jurássico", "Cretáceo", "Paleógeno", "Neógeno", "Quaternário"],
         required: true
     },
     data_inicio: {
