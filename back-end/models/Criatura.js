@@ -43,12 +43,14 @@ const esquema = mongoose.Schema({
         required: true
     },
     surgimento: {
-        type: String,
+        type: mongoose.ObjectId,
+        ref: 'Periodo',
         required: true,
         enum: ["Cambriano", "Ordoviciano", "Siluriano", "Devoniano", "Carbonífero", "Permiano", "Triássico", "Jurássico", "Cretáceo", "Paleógeno", "Neógeno", "Quaternário"]
     },
     extincao: {
-        type: String,
+        type: mongoose.ObjectId,
+        ref: 'Periodo',
         required: true,
         enum: ["Cambriano", "Ordoviciano", "Siluriano", "Devoniano", "Carbonífero", "Permiano", "Triássico", "Jurássico", "Cretáceo", "Paleógeno", "Neógeno", "Quaternário"]
     },

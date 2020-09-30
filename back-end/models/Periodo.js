@@ -24,12 +24,7 @@ const esquema = mongoose.Schema({
     texto: {
         type: String,
         required: true
-    },
-    criatura: [{
-        type: mongoose.ObjectId,
-        ref: 'Criatura',
-        required: true
-    }]
+    }
 })
 
 module.exports = mongoose.model('Periodo', esquema, 'periodos')
