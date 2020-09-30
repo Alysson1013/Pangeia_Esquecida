@@ -23,8 +23,9 @@ const esquema = mongoose.Schema({
         required: true
     },
     descobridor: {
-        type: String,
-        required: true
+        type: mongoose.ObjectId,
+        ref: "Paleontologo",
+        required: false
     },
     data_descoberta: {
         type: String,
