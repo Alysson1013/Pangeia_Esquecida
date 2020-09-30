@@ -1,11 +1,9 @@
 const Criatura = require('../models/Criatura')
-
 const controller = {}
 
 controller.novo = async (req, res) => {
     try {
         await Criatura.create(req.body)
-        
         res.status(201).end()
     }
     catch (erro) {

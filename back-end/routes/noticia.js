@@ -3,7 +3,6 @@ const controller = require('../controllers/noticia')
 //Importando express
 const express = require('express')
 
-//Recebe o fluxo do app.js com o verbo crud
 const router = express.Router()
 
 router.post('/', controller.novo)//Create
