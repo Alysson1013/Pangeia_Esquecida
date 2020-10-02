@@ -1,17 +1,13 @@
-
-const controller = require('../controllers/artigo')
-//Importando express
 const express = require('express')
 
-//Recebe o fluxo do app.js com o verbo crud
+const controller = require('../controllers/artigo')
+
 const router = express.Router()
 
-router.post('/', controller.novo)//Create
-router.get('/', controller.listar)//Retrieve (all)
-router.get('/:id', controller.obterUm)//Retrieve (one) //joga o id como parametro
-router.put('/', controller.atualizar)//Update
-router.delete('/', controller.excluir)//DELETE
+router.post('/', controller.novo)
+router.get('/', controller.listar)
+router.get('/:id', controller.obterUm)
+router.put('/', controller.atualizar)
+router.delete('/', controller.excluir)
 
-
-//Exportando router
-module.exports = router 
+module.exports = router

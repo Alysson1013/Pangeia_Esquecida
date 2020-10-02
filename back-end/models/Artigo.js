@@ -1,4 +1,3 @@
-//Fazendo Requisão do Mongoose
 mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
