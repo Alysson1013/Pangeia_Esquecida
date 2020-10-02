@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 //conexão do mongo
 module.exports = uri => {
+    //URI, string de conexão do atlas
     mongoose.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,

@@ -1,10 +1,15 @@
-const mongoose = require('mongoose')
+//Fazendo Requisão do Mongoose
+mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
     titulo: {
         type: String,
         required: true
-    }, 
+    },
+    imagem: {
+        type: String,
+        required: true
+    },
     texto: {
         type: String,
         required: true
@@ -13,7 +18,7 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    fontes:{
+    fonte: {
         type: String,
         required: true
     }
