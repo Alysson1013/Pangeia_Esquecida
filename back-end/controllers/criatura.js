@@ -15,9 +15,7 @@ controller.novo = async (req, res) => {
 
 controller.listar = async (req, res) => {
     try{
-        let dados = await Criatura.find()
-            .populate('periodo', 'nome imagem')
-            .populate('paleontologo', 'nome imagem')
+        let dados = await Criatura.find().populate('descobridor', "nome imagem").populate('surgimento', "nome imagem").populate('extincao', "nome imagem")
         res.send(dados)
     } 
     catch(err){
