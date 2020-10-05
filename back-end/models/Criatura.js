@@ -35,10 +35,10 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    pais: {
+    pais: [{
         type: String,
         required: true
-    },
+    }],
     imagem: {
         type: String,
         required: true

@@ -14,10 +14,6 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    duracao: {
-        type: String,
-        required: true
-    },
     imagem: {
         type: String,
         required: true
