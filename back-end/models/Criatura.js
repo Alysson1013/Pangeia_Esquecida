@@ -15,11 +15,11 @@ const esquema = mongoose.Schema({
         enum: ['Carnívoro', 'Herbívoro', 'Onívoro', 'Fotossíntese']
     },
     tamanho: {
-        type: Number,
+        type: String,
         required: true
     },
     peso: {
-        type: Number,
+        type: String,
         required: true
     },
     descobridor: {
@@ -57,10 +57,10 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    fonte: {
+    fonte: [{
         type: String,
         required: true
-    }
+    }]
 })
 
 module.exports = mongoose.model('Criatura', esquema, 'criaturas')
