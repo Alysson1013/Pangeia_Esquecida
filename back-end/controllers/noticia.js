@@ -66,8 +66,11 @@ async function busca(req, res) {
     let criterio = {}
 
     const atrib = Object.keys(req.query)[0]
-    const valor = (Object.values(req.query)[0].filter((este, i, arr) => arr.indexOf(este) === i)).toString()
-    criterio[atrib] = { $regex: valor, $options: 'i' }
+    const valor = Object.values(req.query)[0]
+    for(let l in valor){
+        criterio[atrib] = { $regex: valor[l], $options: 'i' }
+    }
+    
     
     console.log('Critério:')
     console.log(criterio)
