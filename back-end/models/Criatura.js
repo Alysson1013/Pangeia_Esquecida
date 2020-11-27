@@ -14,12 +14,16 @@ const esquema = mongoose.Schema({
         required: true,
         enum: ['Carnívoro', 'Herbívoro', 'Onívoro', 'Fotossíntese']
     },
-    tamanho: {
-        type: String,
+    altura: {
+        type: Number,
+        required: true
+    },
+    comprimento: {
+        type: Number,
         required: true
     },
     peso: {
-        type: String,
+        type: Number,
         required: true
     },
     descobridor: {
