@@ -12,6 +12,7 @@ import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoticiaListComponent } from './noticia/noticia-list/noticia-list.component';
 import { FormsModule } from '@angular/forms';
+import { NoticiaFormComponent } from './noticia/noticia-form/noticia-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     MainToolbarComponent,
     MainMenuComponent,
     MainFooterComponent,
-    NoticiaListComponent
+    NoticiaListComponent,
+    NoticiaFormComponent
   ],
   imports: [
     BrowserModule,

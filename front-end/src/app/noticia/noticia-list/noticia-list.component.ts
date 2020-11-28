@@ -11,7 +11,7 @@ export class NoticiaListComponent implements OnInit {
 
   noticias : any = []  // Vetor vazio
 
-  displayedColumns : string[] = ['manchete', 'imagem', 'url']
+  displayedColumns : string[] = ['manchete', 'imagem', 'url', 'editar', 'excluir']
   
   constructor(
     private noticiaSrv : NoticiaService,

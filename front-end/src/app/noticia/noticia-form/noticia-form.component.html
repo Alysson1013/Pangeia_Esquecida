@@ -1,0 +1,33 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <!--mat-form-field appearance="fill"-->
+  <mat-form-field>
+    <mat-label>Manchete da noticia</mat-label>
+    <input name="manchete" [(ngModel)]="noticia.manchete" matInput required
+      placeholder="Informe a manchete da noticia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Imagem da notícia</mat-label>
+    <input name="imagem" [(ngModel)]="noticia.imagem" matInput required
+      placeholder="Informe a imagem da notícia">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Url da notícia</mat-label>
+    <input name="url" [(ngModel)]="noticia.url" matInput required
+      placeholder="Informe a url da notícia">
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
