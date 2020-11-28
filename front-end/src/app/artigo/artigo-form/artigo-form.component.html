@@ -1,0 +1,44 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+    <mat-label>Título do artigo</mat-label>
+    <input name="titulo" [(ngModel)]="artigo.titulo" matInput required
+      placeholder="Informe o título da artigo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Imagem do artigo</mat-label>
+    <input name="imagem" [(ngModel)]="artigo.imagem" matInput required
+      placeholder="Informe a imagem do artigo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Texto do artigo</mat-label>
+    <input name="texto" [(ngModel)]="artigo.texto" matInput required
+      placeholder="Informe o texto do artigo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Autor do artigo</mat-label>
+    <input name="autor" [(ngModel)]="artigo.autor" matInput required
+      placeholder="Informe o autor do artigo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Fonte do artigo</mat-label>
+    <input name="fonte" [(ngModel)]="artigo.fonte" matInput required
+      placeholder="Informe a fonte do artigo">
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>

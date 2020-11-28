@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { NoticiaService } from '../noticia.service';
+import { PaleontologoService } from '../paleontologo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-noticia-list',
-  templateUrl: './noticia-list.component.html',
-  styleUrls: ['./noticia-list.component.scss']
+  selector: 'app-paleontologo-list',
+  templateUrl: './paleontologo-list.component.html',
+  styleUrls: ['./paleontologo-list.component.scss']
 })
-export class NoticiaListComponent implements OnInit {
+export class PaleontologoListComponent implements OnInit {
 
-  noticias : any = []  // Vetor vazio
+  paleontologos : any = []  // Vetor vazio
 
-  displayedColumns : string[] = ['manchete', 'url', 'imagem', 'editar', 'excluir']
+  displayedColumns : string[] = ['nome', 'data_nascimento', 'data_falecimento', 'texto', 'especializacao', 'imagem', 'editar', 'excluir']
   
   constructor(
-    private noticiaSrv : NoticiaService,
+    private paleontologoSrv : PaleontologoService,
     private snackBar : MatSnackBar
   ) { }
 
   async ngOnInit() {
-    this.noticias = await this.noticiaSrv.listar()
-    console.log(this.noticias)
+    this.paleontologos = await this.paleontologoSrv.listar()
+    console.log(this.paleontologos)
   }
 
   async excluir(id : string) {
     if(confirm('Deseja realmente excluir este item?')) {
       try {
         // 1) Efetuar a exclusão
-        await this.noticiaSrv.excluir(id)
+        await this.paleontologoSrv.excluir(id)
         // 2) Atualizar os dados da tabela
         this.ngOnInit()
         // 3) Dar um feedback de sucesso para o usuário

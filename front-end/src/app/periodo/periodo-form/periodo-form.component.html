@@ -1,0 +1,50 @@
+  
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <mat-select name="nome" [(ngModel)]="periodo.nome" required>
+      <mat-option *ngFor="let nome of niveis" [value]="nome.valor">
+        {{ nome.descr }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>  
+
+  <mat-form-field>
+    <mat-label>Data de início do período</mat-label>
+    <input name="data_inicio" [(ngModel)]="periodo.data_inicio" matInput required
+      placeholder="Informe a data de ínicio do período">
+  </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Data do fim do período</mat-label>
+    <input name="data_fim" [(ngModel)]="periodo.data_fim" matInput required
+      placeholder="Informe a data do fim do período">
+  </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Imagem do período</mat-label>
+    <input name="imagem" [(ngModel)]="periodo.imagem" matInput required
+      placeholder="Informe a imagem do período">
+  </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Texto do período</mat-label>
+    <input name="texto" [(ngModel)]="periodo.texto" matInput required
+      placeholder="Texto do período">
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</form>

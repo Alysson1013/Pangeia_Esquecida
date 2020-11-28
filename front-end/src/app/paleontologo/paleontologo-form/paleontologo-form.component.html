@@ -1,0 +1,52 @@
+<h1>{{ title }}</h1>
+
+<form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
+
+  <!--mat-form-field appearance="fill"-->
+  <mat-form-field>
+    <mat-label>Nome do paleontólogo</mat-label>
+    <input name="nome" [(ngModel)]="paleontologo.nome" matInput required
+      placeholder="Informe o nome do paleontologo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data de nascimento do paleontólogo</mat-label>
+    <input name="data_nascimento" [(ngModel)]="paleontologo.data_nascimento" matInput required
+      placeholder="Informe a data de nascimento do paleontólogo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Data de falescimento do paleontólogo</mat-label>
+    <input name="data_falecimento" [(ngModel)]="paleontologo.data_falecimento" matInput required
+      placeholder="Informe a data de falecimento do paleontólogo">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Texto do paleontólogo</mat-label>
+    <input name="texto" [(ngModel)]="paleontologo.texto" matInput required
+      placeholder="Texto do paleontólogo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Especializacão do paleontólogo</mat-label>
+    <input name="especializacao" [(ngModel)]="paleontologo.especializacao" matInput required
+      placeholder="Informe a especializacão do paleontólogo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Imagem do paleontólogo</mat-label>
+    <input name="imagem" [(ngModel)]="paleontologo.imagem" matInput required
+      placeholder="Informe a imagem do paleontólogo">
+  </mat-form-field>
+
+  <mat-toolbar class="form-buttons">
+    <mat-toolbar-row>
+      <button mat-raised-button type="submit" color="accent">
+        Salvar
+      </button>
+      <button mat-raised-button type="button" (click)="voltar(f)">
+        Voltar
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>

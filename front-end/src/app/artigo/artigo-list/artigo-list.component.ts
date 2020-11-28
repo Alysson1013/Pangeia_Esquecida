@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { NoticiaService } from '../noticia.service';
+import { ArtigoService } from '../artigo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-noticia-list',
-  templateUrl: './noticia-list.component.html',
-  styleUrls: ['./noticia-list.component.scss']
+  selector: 'app-artigo-list',
+  templateUrl: './artigo-list.component.html',
+  styleUrls: ['./artigo-list.component.scss']
 })
-export class NoticiaListComponent implements OnInit {
+export class ArtigoListComponent implements OnInit {
 
-  noticias : any = []  // Vetor vazio
+  artigos : any = []  // Vetor vazio
 
-  displayedColumns : string[] = ['manchete', 'url', 'imagem', 'editar', 'excluir']
+  displayedColumns : string[] = ['titulo', 'imagem', 'texto', 'autor', 'fonte', 'editar', 'excluir']
   
   constructor(
-    private noticiaSrv : NoticiaService,
+    private artigoSrv : ArtigoService,
     private snackBar : MatSnackBar
   ) { }
 
   async ngOnInit() {
-    this.noticias = await this.noticiaSrv.listar()
-    console.log(this.noticias)
+    this.artigos = await this.artigoSrv.listar()
+    console.log(this.artigos)
   }
 
   async excluir(id : string) {
     if(confirm('Deseja realmente excluir este item?')) {
       try {
         // 1) Efetuar a exclusão
-        await this.noticiaSrv.excluir(id)
+        await this.artigoSrv.excluir(id)
         // 2) Atualizar os dados da tabela
         this.ngOnInit()
         // 3) Dar um feedback de sucesso para o usuário
