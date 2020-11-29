@@ -8,6 +8,8 @@ import { PaleontologoListComponent } from './paleontologo/paleontologo-list/pale
 import { PaleontologoFormComponent } from './paleontologo/paleontologo-form/paleontologo-form.component';
 import { PeriodoListComponent } from './periodo/periodo-list/periodo-list.component';
 import { PeriodoFormComponent } from './periodo/periodo-form/periodo-form.component';
+import { CriaturaListComponent } from './criatura/criatura-list/criatura-list.component';
+import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.component';
 
 const routes: Routes = [
     { path: 'noticia', component: NoticiaListComponent },
@@ -22,6 +24,9 @@ const routes: Routes = [
     { path: 'periodo', component: PeriodoListComponent },
     { path: 'periodo/novo', component: PeriodoFormComponent },
     { path: 'periodo/:id', component: PeriodoFormComponent },
+    { path: 'criatura', component: CriaturaListComponent },
+    { path: 'criatura/novo', component: CriaturaFormComponent },
+    { path: 'criatura/:id', component: CriaturaFormComponent },
 ];
 
 @NgModule({

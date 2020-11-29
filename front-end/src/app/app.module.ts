@@ -19,6 +19,8 @@ import { PaleontologoListComponent } from './paleontologo/paleontologo-list/pale
 import { PaleontologoFormComponent } from './paleontologo/paleontologo-form/paleontologo-form.component';
 import { PeriodoListComponent } from './periodo/periodo-list/periodo-list.component';
 import { PeriodoFormComponent } from './periodo/periodo-form/periodo-form.component';
+import { CriaturaListComponent } from './criatura/criatura-list/criatura-list.component';
+import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { PeriodoFormComponent } from './periodo/periodo-form/periodo-form.compon
     PaleontologoFormComponent,
     PeriodoListComponent,
     PeriodoFormComponent,
+    CriaturaListComponent,
+    CriaturaFormComponent,
   ],
   imports: [
     BrowserModule,
