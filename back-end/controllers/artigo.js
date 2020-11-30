@@ -18,7 +18,7 @@ controller.listar = async (req, res) => {
         busca(req, res)
     } else {
         try {
-            let dados = await Artigo.find()
+            let dados = await Artigo.find().populate('paleontologoRef', "nome imagem descr").populate('periodoRef', "nome imagem descr").populate('criaturaRef', "nome imagem descr")
             res.send(dados)
         }
         catch (err) {

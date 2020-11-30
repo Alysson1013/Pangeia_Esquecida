@@ -18,7 +18,7 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    texto: {
+    descr: {
         type: String,
         required: true
     }

@@ -18,7 +18,7 @@ controller.listar = async (req, res) => {
         busca(req, res)
     } else {
         try {
-            let dados = await Criatura.find().populate('descobridor', "nome imagem texto").populate('surgimento', "nome imagem texto").populate('extincao', "nome imagem texto")
+            let dados = await Criatura.find().populate('descobridor', "nome imagem descr").populate('surgimento', "nome imagem descr").populate('extincao', "nome imagem descr")
             res.send(dados)
         }
         catch (err) {

@@ -57,7 +57,7 @@ const esquema = mongoose.Schema({
         ref: 'Periodo',
         required: true
     },
-    texto: {
+    descr: {
         type: String,
         required: true
     },
