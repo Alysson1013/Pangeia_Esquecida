@@ -16,7 +16,7 @@ export class PeriodoFormComponent implements OnInit {
 
   periodo : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
-  niveis : any = [
+  nomes : any = [
     { valor: 'Cambriano', descr: 'Cambriano' },
     { valor: 'Ordoviciano', descr: 'Ordoviciano' },
     { valor: 'Siluriano', descr: 'Siluriano' },

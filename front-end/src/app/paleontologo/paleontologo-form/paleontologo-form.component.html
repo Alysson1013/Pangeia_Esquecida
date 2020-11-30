@@ -11,21 +11,22 @@
 
   <mat-form-field>
     <mat-label>Data de nascimento do paleontólogo</mat-label>
-    <input name="data_nascimento" [(ngModel)]="paleontologo.data_nascimento" matInput required
-      placeholder="Informe a data de nascimento do paleontólogo">
+    <input matInput [matDatepicker]="data_nascimento" [(ngModel)]="paleontologo.data_nascimento" name="data_nascimento" required>
+    <mat-datepicker-toggle matSuffix [for]="data_nascimento"></mat-datepicker-toggle>
+    <mat-datepicker #data_nascimento></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Data de falescimento do paleontólogo</mat-label>
-    <input name="data_falecimento" [(ngModel)]="paleontologo.data_falecimento" matInput required
-      placeholder="Informe a data de falecimento do paleontólogo">
+    <mat-label>Data de falecimento do paleontólogo</mat-label>
+    <input matInput [matDatepicker]="data_falecimento" [(ngModel)]="paleontologo.data_falecimento" name="data_falecimento" required>
+    <mat-datepicker-toggle matSuffix [for]="data_falecimento"></mat-datepicker-toggle>
+    <mat-datepicker #data_falecimento></mat-datepicker>
   </mat-form-field>
 
-
   <mat-form-field>
-    <mat-label>Texto do paleontólogo</mat-label>
-    <input name="texto" [(ngModel)]="paleontologo.texto" matInput required
-      placeholder="Texto do paleontólogo">
+    <mat-label>Descrição do paleontólogo</mat-label>
+    <input name="descr" [(ngModel)]="paleontologo.descr" matInput required
+      placeholder="Descrição do paleontólogo">
   </mat-form-field>
 
   <mat-form-field>

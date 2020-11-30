@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { CriaturaService } from 'src/app/criatura/criatura.service';
+import { PaleontologoService } from 'src/app/paleontologo/paleontologo.service';
+import { PeriodoService } from 'src/app/periodo/periodo.service';
 
 @Component({
   selector: 'app-artigo-form',
@@ -12,11 +15,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArtigoFormComponent implements OnInit {
 
-  title : string = 'Nova notícia'
+  title : string = 'Novo artigo'
 
   artigo : any = {} // Objeto vazio, nome da entidade no SINGULAR
 
+  criaturas : any = []
+  paleontologos : any = []
+  periodos : any = []
+
   constructor(
+    private criaturaSrv : CriaturaService,
+    private paleontologoSrv : PaleontologoService,
+    private periodoSrv : PeriodoService,
     private artigoSrv : ArtigoService,
     private snackBar : MatSnackBar,
     private location : Location,
@@ -38,8 +48,19 @@ export class ArtigoFormComponent implements OnInit {
           'Que pena!', { duration: 5000 })
       }
     }
-  }
 
+    try {
+      this.criaturas = await this.criaturaSrv.listar()
+      this.paleontologos = await this.paleontologoSrv.listar()
+      this.periodos = await this.periodoSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
+        'Que pena!', { duration: 5000 })
+    }
+  }
+  
   async salvar(form : NgForm) {
     try {
       if(form.valid) {
@@ -68,13 +89,9 @@ export class ArtigoFormComponent implements OnInit {
 
   voltar(form : NgForm) {
     let result = true
-    // form.dirty = formulário "sujo", não salvo (via código)
-    // form.touched = o conteúdo de algum campo foi alterado (via usuário)
     if(form.dirty && form.touched) {
       result = confirm('Há dados não salvos. Deseja realmente voltar?')
     }
-    // Retorna à página anterior se resposta foi positiva ou se o formulário
-    // estiver "limpo"
     if(result) this.location.back()
   }
 

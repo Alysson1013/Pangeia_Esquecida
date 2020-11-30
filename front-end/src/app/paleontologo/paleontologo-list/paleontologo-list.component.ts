@@ -11,7 +11,7 @@ export class PaleontologoListComponent implements OnInit {
 
   paleontologos : any = []  // Vetor vazio
 
-  displayedColumns : string[] = ['nome', 'data_nascimento', 'data_falecimento', 'texto', 'especializacao', 'imagem', 'editar', 'excluir']
+  displayedColumns : string[] = ['nome', 'data_nascimento', 'data_falecimento', 'descr', 'especializacao', 'imagem', 'editar', 'excluir']
   
   constructor(
     private paleontologoSrv : PaleontologoService,

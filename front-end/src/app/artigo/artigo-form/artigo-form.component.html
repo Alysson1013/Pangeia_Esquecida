@@ -27,6 +27,33 @@
   </mat-form-field>
 
   <mat-form-field>
+    <mat-label>Criaturas vinculado ao artigo</mat-label>
+    <mat-select name="criaturaRef" [(ngModel)]="artigo.criaturaRef" multiple>
+      <mat-option *ngFor="let criatura of criaturas" [value]="criatura._id">
+        {{ criatura.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Períodos vinculado ao artigo</mat-label>
+    <mat-select name="periodoRef" [(ngModel)]="artigo.periodoRef" multiple>
+      <mat-option *ngFor="let periodo of periodos" [value]="periodo._id">
+        {{ periodo.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Paleontológos vinculado ao artigo</mat-label>
+    <mat-select name="paleontologoRef" [(ngModel)]="artigo.paleontologoRef" multiple>
+      <mat-option *ngFor="let paleontologo of paleontologos" [value]="paleontologo._id">
+        {{ paleontologo.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
     <mat-label>Fonte do artigo</mat-label>
     <input name="fonte" [(ngModel)]="artigo.fonte" matInput required
       placeholder="Informe a fonte do artigo">

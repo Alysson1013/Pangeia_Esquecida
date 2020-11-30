@@ -1,4 +1,3 @@
-  
 import { Component, OnInit } from '@angular/core';
 import { PeriodoService } from '../periodo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -12,7 +11,7 @@ export class PeriodoListComponent implements OnInit {
 
   periodos : any = []  // Vetor vazio
 
-  displayedColumns : string[] = ['nome', 'data_inicio', 'data_fim', 'imagem', 'texto', 'editar', 'excluir']
+  displayedColumns : string[] = ['nome', 'data_inicio', 'data_fim', 'imagem', 'descr', 'editar', 'excluir']
   
   constructor(
     private periodoSrv : PeriodoService,

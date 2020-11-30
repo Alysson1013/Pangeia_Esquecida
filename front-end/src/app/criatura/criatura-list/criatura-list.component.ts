@@ -13,7 +13,7 @@ export class CriaturaListComponent implements OnInit {
 
   displayedColumns : string[] = ['nome', 'nome_cientifico', 'dieta', 'altura', 'comprimento', 
     'peso', 'descobridor', 'data_descoberta', 'habitat', 'pais', 'imagem', 'surgimento', 
-    'extincao', 'texto', 'fonte', 'editar', 'excluir']
+    'extincao', 'descr', 'fonte', 'editar', 'excluir']
   
   constructor(
     private criaturaSrv : CriaturaService,

@@ -1,4 +1,4 @@
-<h1>Listagem de notícas</h1>
+<h1>Listagem de paleontólogos</h1>
 
 <mat-toolbar class="new-item">
   <a mat-raised-button color="accent" [routerLink]="['/paleontologo/novo']">
@@ -24,9 +24,9 @@
 		<td mat-cell *matCellDef="let paleontologo"> {{ paleontologo.data_falecimento }} </td>
 	</ng-container>
 
-    <ng-container matColumnDef="texto">
-		<th mat-header-cell *matHeaderCellDef> Texto </th>
-		<td mat-cell *matCellDef="let paleontologo"> {{ paleontologo.texto }} </td>
+    <ng-container matColumnDef="descr">
+		<th mat-header-cell *matHeaderCellDef> Descrição </th>
+		<td mat-cell *matCellDef="let paleontologo"> {{ paleontologo.descr }} </td>
 	</ng-container>
 
     <ng-container matColumnDef="especializacao">

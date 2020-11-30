@@ -26,11 +26,11 @@ const esquema = mongoose.Schema({
         type: Number,
         required: true
     },
-    descobridor: {
+    descobridor: [{
         type: mongoose.ObjectId,
         ref: "Paleontologo",
         required: false
-    },
+    }],
     data_descoberta: {
         type: String,
         required: true

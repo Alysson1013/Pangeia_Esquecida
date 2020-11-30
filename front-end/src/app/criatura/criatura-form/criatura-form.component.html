@@ -24,33 +24,37 @@
   </mat-form-field> 
 
   <mat-form-field>
-    <mat-label>Altura da criatura</mat-label>
+    <mat-label>Altura da criatura(metros)</mat-label>
     <input name="altura" [(ngModel)]="criatura.altura" matInput required
-      placeholder="Informe a altura da criatura">
+      placeholder="Informe a altura da criatura" type="number">
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Comprimento da criatura</mat-label>
+    <mat-label>Comprimento da criatura(metros)</mat-label>
     <input name="comprimento" [(ngModel)]="criatura.comprimento" matInput required
-      placeholder="Informe o comprimento da criatura">
+      placeholder="Informe o comprimento da criatura" type="number">
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Peso da criatura</mat-label>
+    <mat-label>Peso da criatura(quilos)</mat-label>
     <input name="peso" [(ngModel)]="criatura.peso" matInput required
-      placeholder="Informe o peso da criatura">
+      placeholder="Informe o peso da criatura" type="number">
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Descobridor da criatura</mat-label>
-    <input name="descobridor" [(ngModel)]="criatura.descobridor" matInput required
-      placeholder="Informe o descobridor da criatura">
-  </mat-form-field> // voltar aqui
+    <mat-select name="descobridor" [(ngModel)]="criatura.descobridor" required multiple>
+      <mat-option *ngFor="let paleontologo of paleontologos" [value]="paleontologo._id">
+        {{ paleontologo.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <mat-form-field>
     <mat-label>Data de descoberta da criatura</mat-label>
-    <input name="data_descoberta" [(ngModel)]="criatura.data_descoberta" matInput required
-      placeholder="Informe a data de descoberta da criatura">
+    <input matInput [matDatepicker]="data_descoberta" [(ngModel)]="criatura.data_descoberta" name="data_descoberta" required>
+    <mat-datepicker-toggle matSuffix [for]="data_descoberta"></mat-datepicker-toggle>
+    <mat-datepicker #data_descoberta></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
@@ -73,27 +77,33 @@
 
   <mat-form-field>
     <mat-label>Surgimento da criatura</mat-label>
-    <input name="surgimento" [(ngModel)]="criatura.surgimento" matInput required
-      placeholder="Informe o período de surgimento da criatura">
-  </mat-form-field> // voltar aqui
+    <mat-select name="surgimento" [(ngModel)]="criatura.surgimento" required>
+      <mat-option *ngFor="let periodo of periodos" [value]="periodo._id">
+        {{ periodo.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <mat-form-field>
     <mat-label>Extinção da criatura</mat-label>
-    <input name="extincao" [(ngModel)]="criatura.extincao" matInput required
-      placeholder="Informe o período de extincao da criatura">
-  </mat-form-field> // de novo
+    <mat-select name="extincao" [(ngModel)]="criatura.extincao" required>
+      <mat-option *ngFor="let periodo of periodos" [value]="periodo._id">
+        {{ periodo.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Texto da criatura</mat-label>
-    <input name="texto" [(ngModel)]="criatura.texto" matInput required
-      placeholder="Informe o texto da criatura">
+    <mat-label>Descrição da criatura</mat-label>
+    <input name="descr" [(ngModel)]="criatura.descr" matInput required
+      placeholder="Informe a descrição da criatura">
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Fonte da criatura</mat-label>
     <input name="fonte" [(ngModel)]="criatura.fonte" matInput required
       placeholder="Informe a fonte da criatura">
-  </mat-form-field>
+  </mat-form-field> // mais um
 
   <mat-toolbar class="form-buttons">
     <mat-toolbar-row>
