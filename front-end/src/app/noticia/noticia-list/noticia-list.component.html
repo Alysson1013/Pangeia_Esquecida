@@ -7,33 +7,23 @@
   </a>
 </mat-toolbar>
 
-<!-- <div class="row card-group">
-  <mat-card class="example-card col-4" *ngFor="let noticia of noticias">
-    <mat-card-header>
-      <mat-card-title>{{ noticia.manchete }}</mat-card-title>
-      <mat-card-subtitle>{{ noticia.url }}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="noticia.imagem">
-    <mat-card-actions>
-      <a mat-raised-button color="accent" title="Editar" [routerLink]="['/noticia', noticia._id]">
-        <mat-icon>edit</mat-icon>
-      </a>
-      <button mat-raised-button color="warn" title="Excluir" (click)="excluir(noticia._id)">
-        <mat-icon>delete_forever</mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div> -->
+<form class="form-inline md-form form-sm active-pink-2">
+  <mat-icon>search</mat-icon>
+  <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search"
+    mdbInput>
+</form>
 
 <div class="content">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
     <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let noticia of noticias">
       <mat-card class="example-card mat-elevation-z4" >
         <mat-card-header>
-          <mat-card-title>{{noticia.manchete}}</mat-card-title>
+          <mat-card-title><p>{{ noticia.manchete }}</p></mat-card-title>
         </mat-card-header>
-        <a class="urls" href="{{ noticia.url }}">Ver mais...</a><p></p>
-        <img mat-card-image [src]="noticia.imagem">
+        <div>
+          <a class="urls" href="{{ noticia.url }}">Ver mais...</a>
+          <img mat-card-image [src]="noticia.imagem">
+        </div>
         <mat-card-actions align="end">
           <a mat-raised-button color="accent" title="Editar" [routerLink]="['/noticia', noticia._id]">
             <mat-icon>edit</mat-icon>
