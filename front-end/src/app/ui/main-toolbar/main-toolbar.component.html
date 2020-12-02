@@ -1,5 +1,11 @@
 <mat-toolbar color="primary" class="mat-elevation-z8">
-    <app-main-menu></app-main-menu>
-	<!-- <span>{{ appName }}</span> -->
-    <a [routerLink]="['/']" style="text-decoration: none; color: #FFFFFF;">{{ appName }}</a>
+  <app-main-menu></app-main-menu>
+  <a [routerLink]="['/']" style="text-decoration: none; color: #FFFFFF;">{{ appName }}</a>
+
+  <form class="form-inline waves-light" mdbWavesEffect>
+    <div class="md-form mt-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+    </div>
+  </form>
+
 </mat-toolbar>
