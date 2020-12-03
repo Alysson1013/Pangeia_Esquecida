@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ArtigoListComponent implements OnInit {
 
+  panelOpenState = false;
+
   artigos : any = []  // Vetor vazio
 
   displayedColumns : string[] = ['titulo', 'imagem', 'texto', 'autor', 'fonte', 'editar', 'excluir']
