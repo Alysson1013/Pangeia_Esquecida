@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtigoService } from '../artigo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CriaturaService } from 'src/app/criatura/criatura.service';
+import { PeriodoService } from 'src/app/periodo/periodo.service';
+import { PaleontologoService } from 'src/app/paleontologo/paleontologo.service';
 
 @Component({
   selector: 'app-artigo-list',
@@ -9,13 +12,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ArtigoListComponent implements OnInit {
 
-  panelOpenState = false;
+  artigos : any = []
+  criaturas : any = []
+  paleontologos : any = []
+  periodos : any = []
 
-  artigos : any = []  // Vetor vazio
-
-  displayedColumns : string[] = ['titulo', 'imagem', 'texto', 'autor', 'fonte', 'editar', 'excluir']
-  
   constructor(
+    private criaturaSrv : CriaturaService,
+    private paleontologoSrv : PaleontologoService,
+    private periodoSrv : PeriodoService,
     private artigoSrv : ArtigoService,
     private snackBar : MatSnackBar
   ) { }
@@ -45,6 +50,18 @@ export class ArtigoListComponent implements OnInit {
         })
       }
     }
+
+    try {
+      this.criaturas = await this.criaturaSrv.listar()
+      this.paleontologos = await this.paleontologoSrv.listar()
+      this.periodos = await this.periodoSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
+        'Que pena!', { duration: 5000 })
+    }
+
   }
 
 }

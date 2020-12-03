@@ -1,17 +1,27 @@
 mat-accordion {
-    // max-height: 600px;
-    width: 625px;
-    float: left;
-    padding: 10px;
-    margin-right: 50px;
-    margin-bottom: 50px;
+  width: 625px;
+  float: left;
+  padding: 10px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+mat-action-row {
+  margin-right: 5px;
 }
 
 img {
-    border-radius: 8px;
-    // max-width: 350px;
-    width: 400px;
-    height: 300px;
-    margin-left: 12px;
-    margin-top: 25px;
+  border-radius: 8px;
+  width: 525px;
+  height: 350px;
+  margin-left: 10px;
+}
+
+.descricao {
+  font-size: 12pt;
+  padding: 15px;
+
+  .fonte {
+    font-size: 8pt;
+  }
 }

@@ -19,42 +19,22 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <img mat-card-image [src]="artigo.imagem">
-    <p>{{ artigo.texto }}</p>
-    <div class="botoes"> 
+    <div class="descricao">
+      <p>{{ artigo.texto }}</p>
+      <p class="fonte"><b>Fonte:</b> {{ artigo.fonte }}</p>
+      <!-- <div *ngFor="let criatura of criaturas"> -->
+        <div>{{ artigo.criaturaRef | json }}</div>
+      <!-- </div> -->
+        <!-- <div *ngIf="artigo.periodoRef!=''">{{ artigo.periodoRef }}</div>
+        <div *ngIf="artigo.paleontologoRef!=''">{{ artigo.paleontologoRef }}</div> -->
+    </div>
+    <mat-action-row>
       <a mat-raised-button color="accent" title="Editar" [routerLink]="['/artigo', artigo._id]">
         <mat-icon>edit</mat-icon>
       </a>
       <button mat-raised-button color="warn" title="Excluir" (click)="excluir(artigo._id)">
         <mat-icon>delete_forever</mat-icon>
       </button>
-    </div>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-
-<!-- <div class="content">
-  <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let artigo of artigos">
-      <mat-card class="example-card mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title><p>{{ artigo.titulo }}</p></mat-card-title><p></p>
-          <mat-card-subtitle>{{ artigo.autor }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="artigo.imagem">
-        <mat-card-content>
-          <p>{{ artigo.texto }}</p>
-          <mat-expansion-panel class="mat-elevation-z0" hideToggle>
-        </mat-expansion-panel>
-        </mat-card-content>
-        <mat-card-subtitle>{{ artigo.fonte }}</mat-card-subtitle>
-        <mat-card-actions align="end">
-          <a mat-raised-button color="accent" title="Editar" [routerLink]="['/artigo', artigo._id]">
-            <mat-icon>edit</mat-icon>
-          </a>
-          <button mat-raised-button color="warn" title="Excluir" (click)="excluir(artigo._id)">
-            <mat-icon>delete_forever</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div>
-</div> -->
