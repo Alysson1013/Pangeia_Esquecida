@@ -7,27 +7,28 @@
   </a>
 </mat-toolbar>
 
-<div class="content">
-  <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let periodo of periodos">
-      <mat-card class="example-card mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title><p>{{ periodo.nome }}</p></mat-card-title><p></p>
-          <mat-card-subtitle>{{ periodo.data_inicio }} a {{ periodo.data_fim }} atrás</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="periodo.imagem">
-        <mat-card-content>
-          <p>{{ periodo.descr }}</p>
-        </mat-card-content>
-        <mat-card-actions align="end">
-          <a mat-raised-button color="accent" title="Editar" [routerLink]="['/periodo', periodo._id]">
-            <mat-icon>edit</mat-icon>
-          </a>
-          <button mat-raised-button color="warn" title="Excluir" (click)="excluir(periodo._id)">
-            <mat-icon>delete_forever</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
+<mat-accordion *ngFor="let periodo of periodos">
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{periodo.nome}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{periodo.data_inicio}} a {{periodo.data_fim}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <img mat-card-image [src]="periodo.imagem">
+    <div class="descricao">
+      <p>{{ periodo.descr }}</p>
     </div>
-  </div>
-</div>
+    <mat-action-row>
+      <a mat-raised-button color="accent" title="Editar" [routerLink]="['/periodo', periodo._id]">
+        <mat-icon>edit</mat-icon>
+      </a>
+      <button mat-raised-button color="warn" title="Excluir" (click)="excluir(periodo._id)">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,58 +1,32 @@
-.example-card {
-    height: 465px;
-    width: 375px;
-    float: left;
-    padding: 10px;
-    margin-right: 50px;
-    margin-bottom: 50px;
+mat-accordion {
+  width: 625px;
+  float: left;
+  padding: 10px;
+  margin-right: 50px;
+  margin-bottom: 50px;
 }
 
-.urls {
-    margin-left: 15px;
+mat-panel-title {
+    margin-top: 11px;
+}
+
+mat-panel-description {
+    margin-top: 11px;
+    margin-left: 200px;
+}
+
+mat-action-row {
+  margin-right: 5px;
 }
 
 img {
-    border-radius: 8px;
-    max-width: 350px;
-    width: 330px;
-    height: 200px;
-    margin-left: 12px;
-    margin-top: 30px;
+  border-radius: 8px;
+  width: 475px;
+  height: 425px;
+  margin-left: 35px;
 }
 
-mat-card-actions {
-    margin-right: 7px;
-    margin-bottom: 15px; 
-}
-
-mat-card-header {
-    max-height: 60px;
-    height: 40px;
-}
-
-mat-card-title p{
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-}
-
-mat-card-subtitle {
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-}
-
-mat-card-content {
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;    
+.descricao {
+  font-size: 12pt;
+  padding: 15px;
 }

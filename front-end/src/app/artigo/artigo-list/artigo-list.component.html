@@ -21,12 +21,18 @@
     <img mat-card-image [src]="artigo.imagem">
     <div class="descricao">
       <p>{{ artigo.texto }}</p>
-      <p class="fonte"><b>Fonte:</b> {{ artigo.fonte }}</p>
-      <!-- <div *ngFor="let criatura of criaturas"> -->
-        <div>{{ artigo.criaturaRef | json }}</div>
-      <!-- </div> -->
-        <!-- <div *ngIf="artigo.periodoRef!=''">{{ artigo.periodoRef }}</div>
-        <div *ngIf="artigo.paleontologoRef!=''">{{ artigo.paleontologoRef }}</div> -->
+			<div class="fonte">
+				<div *ngFor="let c of artigo.criaturaRef">
+					<div *ngIf="artigo.criaturaRef!=''"><b>Criaturas referenciadas:</b> <a [routerLink]="['/criatura']"> {{ c.nome }}</a></div>
+				</div>
+				<div *ngFor="let pa of artigo.paleontologoRef">
+					<div *ngIf="artigo.paleontologoRef!=''"><b>Paleontólogos referenciados:</b> <a [routerLink]="['/paleontologo']"> {{ pa.nome }}</a></div>
+				</div>
+				<div *ngFor="let pe of artigo.periodoRef">
+					<div *ngIf="artigo.periodoRef!=''"><b>Períodos referenciados:</b> <a [routerLink]="['/periodo']"> {{ pe.nome }}</a></div>
+				</div>
+				<p><b>Fonte:</b> {{ artigo.fonte }}</p>
+			</div>
     </div>
     <mat-action-row>
       <a mat-raised-button color="accent" title="Editar" [routerLink]="['/artigo', artigo._id]">

@@ -7,28 +7,29 @@
   </a>
 </mat-toolbar>
 
-<div class="content">
-  <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let paleontologo of paleontologos">
-      <mat-card class="example-card mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title><p>{{ paleontologo.nome }}</p></mat-card-title><p></p>
-          <mat-card-subtitle>{{ paleontologo.data_nascimento }} a {{ paleontologo.data_falecimento }}</mat-card-subtitle>
-          <mat-card-subtitle>{{ paleontologo.especializacao }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="paleontologo.imagem">
-        <mat-card-content>
-          <p>{{ paleontologo.descr }}</p>
-        </mat-card-content>
-        <mat-card-actions align="end">
-          <a mat-raised-button color="accent" title="Editar" [routerLink]="['/paleontologo', paleontologo._id]">
-            <mat-icon>edit</mat-icon>
-          </a>
-          <button mat-raised-button color="warn" title="Excluir" (click)="excluir(paleontologo._id)">
-            <mat-icon>delete_forever</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
+<mat-accordion *ngFor="let paleontologo of paleontologos">
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{paleontologo.nome}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <p>{{paleontologo.data_nascimento}} a {{paleontologo.data_falecimento}}</p>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <img mat-card-image [src]="paleontologo.imagem">
+    <div class="descricao">
+      <p><b>Especializações:</b> {{paleontologo.especializacao}}</p>
+      <p>{{ paleontologo.descr }}</p>
     </div>
-  </div>
-</div>
+    <mat-action-row>
+      <a mat-raised-button color="accent" title="Editar" [routerLink]="['/paleontologo', paleontologo._id]">
+        <mat-icon>edit</mat-icon>
+      </a>
+      <button mat-raised-button color="warn" title="Excluir" (click)="excluir(paleontologo._id)">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
