@@ -83,13 +83,9 @@ export class PeriodoFormComponent implements OnInit {
 
   voltar(form : NgForm) {
     let result = true
-    // form.dirty = formulário "sujo", não salvo (via código)
-    // form.touched = o conteúdo de algum campo foi alterado (via usuário)
     if(form.dirty && form.touched) {
       result = confirm('Há dados não salvos. Deseja realmente voltar?')
     }
-    // Retorna à página anterior se resposta foi positiva ou se o formulário
-    // estiver "limpo"
     if(result) this.location.back()
   }
 
