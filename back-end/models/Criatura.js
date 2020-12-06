@@ -26,11 +26,11 @@ const esquema = mongoose.Schema({
         type: Number,
         required: true
     },
-    descobridor: [{
+    descobridor: {
         type: mongoose.ObjectId,
         ref: "Paleontologo",
         required: false
-    }],
+    },
     data_descoberta: {
         type: String,
         required: true
@@ -39,10 +39,10 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    pais: [{
+    pais: {
         type: String,
         required: true
-    }],
+    },
     imagem: {
         type: String,
         required: true
@@ -61,10 +61,10 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    fonte: [{
+    fonte: {
         type: String,
         required: true
-    }]
+    }
 })
 
 module.exports = mongoose.model('Criatura', esquema, 'criaturas')

@@ -14,8 +14,7 @@ const dbname = process.env.PANGEIA_DB_NAME
 //requisitando banco de dados
 const db = require('./config/database')
 //linkando ao atlas
-db(`mongodb+srv://${dbuser}:${dbpass}@cluster0.ogyhn.gcp.mongodb.net/${dbname}?retryWrites=true&w=majority`)
-
+db(`mongodb+srv://${dbuser}:${dbpass}@pangeiaesquecida.anlwz.mongodb.net/${dbname}?retryWrites=true&w=majority`)
 var app = express();
 
 const cors = require('cors');

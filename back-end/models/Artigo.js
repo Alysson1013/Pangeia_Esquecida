@@ -17,25 +17,25 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     },
-    criaturaRef: [{
+    criaturaRef: {
         type: mongoose.ObjectId,
         ref: 'Criatura',
         required: false
-    }],
-    periodoRef: [{
+    },
+    periodoRef: {
         type: mongoose.ObjectId,
         ref: 'Periodo',
         required: false
-    }],
-    paleontologoRef: [{
+    },
+    paleontologoRef: {
         type: mongoose.ObjectId,
         ref: 'Paleontologo',
         required: false
-    }],
-    fonte: [{
+    },
+    fonte: {
         type: String,
         required: true
-    }]
+    }
 
 })
 
