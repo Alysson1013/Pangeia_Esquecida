@@ -30,6 +30,7 @@ import { PeriodoListComponent } from './periodo/periodo-list/periodo-list.compon
 import { PeriodoFormComponent } from './periodo/periodo-form/periodo-form.component';
 import { CriaturaListComponent } from './criatura/criatura-list/criatura-list.component';
 import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.co
     PeriodoListComponent,
     PeriodoFormComponent,
     CriaturaListComponent,
-    CriaturaFormComponent,
+    CriaturaFormComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +57,7 @@ import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.co
     HttpClientModule,
     FormsModule,
     MatMomentDateModule,
+    Ng2SearchPipeModule,
     NgxMaskModule.forRoot()
   ],
   providers: [

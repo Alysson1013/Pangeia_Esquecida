@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PeriodoListComponent implements OnInit {
 
+  searchText
+
   periodos : any = []  // Vetor vazio
 
   displayedColumns : string[] = ['nome', 'data_inicio', 'data_fim', 'imagem', 'descr', 'editar', 'excluir']

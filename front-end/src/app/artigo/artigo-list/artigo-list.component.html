@@ -7,7 +7,11 @@
   </a>
 </mat-toolbar>
 
-<mat-accordion *ngFor="let artigo of artigos">
+<div class="pesquisa">
+  <input class="form-control mr-sm-2" type="text" placeholder="Buscar" [(ngModel)]="searchText">
+</div>
+
+<mat-accordion *ngFor="let artigo of artigos | filter:searchText">
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false">
     <mat-expansion-panel-header>

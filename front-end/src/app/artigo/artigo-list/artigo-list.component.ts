@@ -12,6 +12,8 @@ import { PaleontologoService } from 'src/app/paleontologo/paleontologo.service';
 })
 export class ArtigoListComponent implements OnInit {
 
+  searchText
+
   artigos : any = []
   criaturas : any = []
   paleontologos : any = []

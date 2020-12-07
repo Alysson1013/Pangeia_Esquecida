@@ -7,7 +7,11 @@
   </a>
 </mat-toolbar>
 
-<mat-accordion *ngFor="let paleontologo of paleontologos">
+<div class="pesquisa">
+  <input class="form-control mr-sm-2" type="text" placeholder="Buscar" [(ngModel)]="searchText">
+</div>
+
+<mat-accordion *ngFor="let paleontologo of paleontologos | filter:searchText">
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false">
     <mat-expansion-panel-header>
@@ -15,7 +19,7 @@
         {{paleontologo.nome}}
       </mat-panel-title>
       <mat-panel-description>
-        <p>{{paleontologo.data_nascimento}} a {{paleontologo.data_falecimento}}</p>
+        <p>{{paleontologo.data_nascimento | date:'dd/MM/yyyy':'UTC' }} a {{paleontologo.data_falecimento | date:'dd/MM/yyyy':'UTC' }}</p>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <img mat-card-image [src]="paleontologo.imagem">

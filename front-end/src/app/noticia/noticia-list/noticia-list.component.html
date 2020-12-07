@@ -7,9 +7,13 @@
   </a>
 </mat-toolbar>
 
+<div class="pesquisa">
+  <input class="form-control mr-sm-2" type="text" placeholder="Buscar" [(ngModel)]="searchText">
+</div>
+
 <div class="content">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let noticia of noticias">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let noticia of noticias | filter:searchText">
       <mat-card class="example-card mat-elevation-z4" >
         <mat-card-header>
           <mat-card-title><p>{{ noticia.manchete }}</p></mat-card-title>

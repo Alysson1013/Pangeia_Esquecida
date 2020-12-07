@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PaleontologoListComponent implements OnInit {
 
+  searchText
+
   paleontologos : any = []  // Vetor vazio
 
   displayedColumns : string[] = ['nome', 'data_nascimento', 'data_falecimento', 'descr', 'especializacao', 'imagem', 'editar', 'excluir']

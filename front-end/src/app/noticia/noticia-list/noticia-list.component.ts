@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class NoticiaListComponent implements OnInit {
 
+  searchText
+  
   noticias : any = []  // Vetor vazio
 
   displayedColumns : string[] = ['manchete', 'url', 'imagem', 'editar', 'excluir']
