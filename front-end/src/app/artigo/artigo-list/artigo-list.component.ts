@@ -29,6 +29,9 @@ export class ArtigoListComponent implements OnInit {
 
   async ngOnInit() {
     this.artigos = await this.artigoSrv.listar()
+    this.criaturas = await this.criaturaSrv.listar()
+    this.paleontologos = await this.paleontologoSrv.listar()
+    this.periodos = await this.periodoSrv.listar()
     console.log(this.artigos)
   }
 
@@ -52,18 +55,6 @@ export class ArtigoListComponent implements OnInit {
         })
       }
     }
-
-    try {
-      this.criaturas = await this.criaturaSrv.listar()
-      this.paleontologos = await this.paleontologoSrv.listar()
-      this.periodos = await this.periodoSrv.listar()
-    }
-    catch(erro) {
-      console.log(erro)
-      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
-        'Que pena!', { duration: 5000 })
-    }
-
   }
 
 }

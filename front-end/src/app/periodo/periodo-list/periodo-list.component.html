@@ -27,9 +27,9 @@
       <p>{{ periodo.descr }}</p>
     </div>
     <div class="animais">
-      <p><b>Criaturas que viverem no período:</b></p>
-      <div *ngFor="let periodo of periodos">
-        <div><a [routerLink]="['/criatura']"> {{periodo.nome}}</a></div>
+      <p><b>Criaturas que surgiram no período:</b></p>
+      <div *ngFor="let criatura of criaturas">
+        <div *ngIf="criatura.surgimento?.nome==periodo.nome"><a [routerLink]="['/criatura']"> {{criatura.nome}}</a></div>
       </div>
     </div>
     <mat-action-row>

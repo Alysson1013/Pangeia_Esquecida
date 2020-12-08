@@ -8,11 +8,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./criatura-list.component.scss']
 })
 export class CriaturaListComponent implements OnInit {
-    
+  
   searchText
 
   criaturas : any = []  // Vetor vazio
-  
+
   constructor(
     private criaturaSrv : CriaturaService,
     private snackBar : MatSnackBar

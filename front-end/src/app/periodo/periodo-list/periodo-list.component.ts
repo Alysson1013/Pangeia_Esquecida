@@ -23,7 +23,9 @@ export class PeriodoListComponent implements OnInit {
 
   async ngOnInit() {
     this.periodos = await this.periodoSrv.listar()
+    this.criaturas = await this.criaturaSrv.listar()
     console.log(this.periodos)
+    console.log(this.criaturas)
   }
 
   async excluir(id : string) {
@@ -46,16 +48,6 @@ export class PeriodoListComponent implements OnInit {
         })
       }
     }
-
-    try {
-      this.criaturas = await this.criaturaSrv.listar()
-    }
-    catch(erro) {
-      console.log(erro)
-      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
-        'Que pena!', { duration: 5000 })
-    }
-
   }
 
 }
