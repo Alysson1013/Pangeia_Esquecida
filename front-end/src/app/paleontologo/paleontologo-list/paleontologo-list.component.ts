@@ -1,3 +1,4 @@
+import { CriaturaService } from './../../criatura/criatura.service';
 import { Component, OnInit } from '@angular/core';
 import { PaleontologoService } from '../paleontologo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -12,17 +13,21 @@ export class PaleontologoListComponent implements OnInit {
   searchText
 
   paleontologos : any = []  // Vetor vazio
+  criaturas : any = []
 
   displayedColumns : string[] = ['nome', 'data_nascimento', 'data_falecimento', 'descr', 'especializacao', 'imagem', 'editar', 'excluir']
   
   constructor(
+    private criaturaSrv : CriaturaService,
     private paleontologoSrv : PaleontologoService,
     private snackBar : MatSnackBar
   ) { }
 
   async ngOnInit() {
     this.paleontologos = await this.paleontologoSrv.listar()
+    this.criaturas = await this.criaturaSrv.listar()
     console.log(this.paleontologos)
+    console.log(this.criaturas)
   }
 
   async excluir(id : string) {

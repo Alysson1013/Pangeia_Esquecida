@@ -27,6 +27,10 @@
       <p><b>Especializações:</b> {{paleontologo.especializacao}}</p>
       <p>{{ paleontologo.descr }}</p>
     </div>
+    <p><b>Criaturas descobertas por {{paleontologo.nome}}:</b></p>
+      <div *ngFor="let criatura of criaturas">
+        <div *ngIf="criatura.descobridor?.nome==paleontologo.nome"><a [routerLink]="['/criatura']"> {{criatura.nome}}</a></div>
+    </div>
     <mat-action-row>
       <a mat-raised-button color="accent" title="Editar" [routerLink]="['/paleontologo', paleontologo._id]">
         <mat-icon>edit</mat-icon>
