@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeriodoService } from '../periodo.service';
+import { CriaturaService } from 'src/app/criatura/criatura.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -11,12 +12,12 @@ export class PeriodoListComponent implements OnInit {
 
   searchText
 
-  periodos : any = []  // Vetor vazio
-
-  displayedColumns : string[] = ['nome', 'data_inicio', 'data_fim', 'imagem', 'descr', 'editar', 'excluir']
+  periodos : any = []
+  criaturas : any = []
   
   constructor(
     private periodoSrv : PeriodoService,
+    private criaturaSrv : CriaturaService,
     private snackBar : MatSnackBar
   ) { }
 
@@ -45,6 +46,16 @@ export class PeriodoListComponent implements OnInit {
         })
       }
     }
+
+    try {
+      this.criaturas = await this.criaturaSrv.listar()
+    }
+    catch(erro) {
+      console.log(erro)
+      this.snackBar.open('ERRO: não foi possível carregar todos os dados do formulário.',
+        'Que pena!', { duration: 5000 })
+    }
+
   }
 
 }

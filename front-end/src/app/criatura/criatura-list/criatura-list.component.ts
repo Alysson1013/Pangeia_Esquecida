@@ -12,10 +12,6 @@ export class CriaturaListComponent implements OnInit {
   searchText
 
   criaturas : any = []  // Vetor vazio
-
-  displayedColumns : string[] = ['nome', 'nome_cientifico', 'dieta', 'altura', 'comprimento', 
-    'peso', 'descobridor', 'data_descoberta', 'habitat', 'pais', 'imagem', 'surgimento', 
-    'extincao', 'descr', 'fonte', 'editar', 'excluir']
   
   constructor(
     private criaturaSrv : CriaturaService,

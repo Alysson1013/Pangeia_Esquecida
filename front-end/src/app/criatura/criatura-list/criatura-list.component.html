@@ -28,18 +28,16 @@
       <p><b>Altura:</b> {{ criatura.altura }} metros</p>
       <p><b>Comprimento:</b> {{ criatura.comprimento }} metros</p>
       <p><b>Peso:</b> {{ criatura.peso }} quilos</p>
-      <p><b>Data de descoberta:</b> {{ criatura.data_descoberta }}</p>
+      <p><b>Data de descoberta:</b> {{ criatura.data_descoberta | date:'dd/MM/yyyy':'UTC'}}</p>
       <p><b>Habitat:</b> {{ criatura.habitat }}</p>
       <p><b>Pais:</b> {{ criatura.pais }}</p>
-      <div *ngFor="let d of criatura.descobridor">
-				<div *ngIf="criatura.descobridor!=''"><p><b>Descobridor:</b> <a [routerLink]="['/paleontologo']"> {{ d.nome }}</a></p></div>
-      </div>
+	  <p><b>Descobridor:</b> <a [routerLink]="['/paleontologo']"> {{ criatura.descobridor?.nome }}</a></p>
       <div *ngIf="criatura.surgimento?.nome==criatura.extincao?.nome; else mostrar">
-        <p><b>Viveu em:</b> {{ criatura.surgimento?.nome }}</p>
+        <p><b>Viveu em:</b> <a [routerLink]="['/periodo']"> {{ criatura.surgimento?.nome }}</a></p>
       </div>
       <div *ngIf="criatura.surgimento?.nome==criatura.extincao?.nome; else mostrar1"></div>
-      <p><ng-template #mostrar><b>Surgimento:</b> {{ criatura.surgimento?.nome }} </ng-template></p>
-      <p><ng-template #mostrar1>e<b> Extincao:</b> {{ criatura.extincao?.nome }}</ng-template></p>
+      <p><ng-template #mostrar><b>Surgimento:</b> <a [routerLink]="['/periodo']"> {{ criatura.surgimento?.nome }} </a></ng-template></p>
+      <p><ng-template #mostrar1>e<b> Extincao:</b> <a [routerLink]="['/periodo']"> {{ criatura.extincao?.nome }}</a></ng-template></p>
       <p>{{ criatura.descr }}</p>
     </div>
     <mat-action-row>

@@ -43,7 +43,7 @@
 
   <mat-form-field>
     <mat-label>Descobridor da criatura</mat-label>
-    <mat-select name="descobridor" [(ngModel)]="criatura.descobridor" required multiple>
+    <mat-select name="descobridor" [(ngModel)]="criatura.descobridor" required>
       <mat-option *ngFor="let paleontologo of paleontologos" [value]="paleontologo._id">
         {{ paleontologo.nome }}
       </mat-option>
@@ -103,7 +103,7 @@
     <mat-label>Fonte da criatura</mat-label>
     <input name="fonte" [(ngModel)]="criatura.fonte" matInput required
       placeholder="Informe a fonte da criatura">
-  </mat-form-field> // mais um
+  </mat-form-field>
 
   <mat-toolbar class="form-buttons">
     <mat-toolbar-row>

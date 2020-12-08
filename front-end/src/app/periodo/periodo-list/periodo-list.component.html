@@ -26,6 +26,12 @@
     <div class="descricao">
       <p>{{ periodo.descr }}</p>
     </div>
+    <div class="animais">
+      <p><b>Criaturas que viverem no período:</b></p>
+      <div *ngFor="let periodo of periodos">
+        <div><a [routerLink]="['/criatura']"> {{periodo.nome}}</a></div>
+      </div>
+    </div>
     <mat-action-row>
       <a mat-raised-button color="accent" title="Editar" [routerLink]="['/periodo', periodo._id]">
         <mat-icon>edit</mat-icon>

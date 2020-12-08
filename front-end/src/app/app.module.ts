@@ -30,7 +30,9 @@ import { PeriodoListComponent } from './periodo/periodo-list/periodo-list.compon
 import { PeriodoFormComponent } from './periodo/periodo-form/periodo-form.component';
 import { CriaturaListComponent } from './criatura/criatura-list/criatura-list.component';
 import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.component';
+import { HomeComponent } from './home/home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     PeriodoListComponent,
     PeriodoFormComponent,
     CriaturaListComponent,
-    CriaturaFormComponent
+    CriaturaFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     MatMomentDateModule,
     Ng2SearchPipeModule,
+    NgbModule,
     NgxMaskModule.forRoot()
   ],
   providers: [
