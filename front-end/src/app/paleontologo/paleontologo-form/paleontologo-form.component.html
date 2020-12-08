@@ -18,7 +18,7 @@
 
   <mat-form-field>
     <mat-label>Data de falecimento do paleontólogo</mat-label>
-    <input matInput [matDatepicker]="data_falecimento" [(ngModel)]="paleontologo.data_falecimento" name="data_falecimento" required>
+    <input matInput [matDatepicker]="data_falecimento" [(ngModel)]="paleontologo.data_falecimento" name="data_falecimento">
     <mat-datepicker-toggle matSuffix [for]="data_falecimento"></mat-datepicker-toggle>
     <mat-datepicker #data_falecimento></mat-datepicker>
   </mat-form-field>

@@ -19,7 +19,8 @@
         {{paleontologo.nome}}
       </mat-panel-title>
       <mat-panel-description>
-        <p>{{paleontologo.data_nascimento | date:'dd/MM/yyyy':'UTC' }} a {{paleontologo.data_falecimento | date:'dd/MM/yyyy':'UTC' }}</p>
+        <p *ngIf="paleontologo.data_falecimento; else mostrar">{{paleontologo.data_nascimento | date:'dd/MM/yyyy':'UTC' }} a {{paleontologo.data_falecimento | date:'dd/MM/yyyy':'UTC' }}</p>
+        <p><ng-template #mostrar>{{paleontologo.data_nascimento | date:'dd/MM/yyyy':'UTC' }}</ng-template></p>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <img mat-card-image [src]="paleontologo.imagem">
