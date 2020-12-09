@@ -10,7 +10,6 @@ import { PeriodoListComponent } from './periodo/periodo-list/periodo-list.compon
 import { PeriodoFormComponent } from './periodo/periodo-form/periodo-form.component';
 import { CriaturaListComponent } from './criatura/criatura-list/criatura-list.component';
 import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.component';
-import { HomeComponent } from './home/home/home.component';
 
 const routes: Routes = [
     { path: 'noticia', component: NoticiaListComponent },
@@ -28,7 +27,7 @@ const routes: Routes = [
     { path: 'criatura', component: CriaturaListComponent },
     { path: 'criatura/novo', component: CriaturaFormComponent },
     { path: 'criatura/:id', component: CriaturaFormComponent },
-    { path: '', component: HomeComponent }
+    { path: '', component: NoticiaListComponent }
 ];
 
 @NgModule({

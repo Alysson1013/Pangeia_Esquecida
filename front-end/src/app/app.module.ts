@@ -30,7 +30,6 @@ import { PeriodoListComponent } from './periodo/periodo-list/periodo-list.compon
 import { PeriodoFormComponent } from './periodo/periodo-form/periodo-form.component';
 import { CriaturaListComponent } from './criatura/criatura-list/criatura-list.component';
 import { CriaturaFormComponent } from './criatura/criatura-form/criatura-form.component';
-import { HomeComponent } from './home/home/home.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -49,8 +48,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PeriodoListComponent,
     PeriodoFormComponent,
     CriaturaListComponent,
-    CriaturaFormComponent,
-    HomeComponent
+    CriaturaFormComponent
   ],
   imports: [
     BrowserModule,
